@@ -566,9 +566,10 @@ console.log(realtorFees(listings[6]));
  */
 //WRITE YOUR CODE BELOW
 
-const listingAscendingly = listings.sort(
-  (a, b) => a.propertySummary.builtIn - b.propertySummary.builtIn,
-);
+const listingAscendingly = listings
+  .slice()
+  .sort((a, b) => a.propertySummary.builtIn - b.propertySummary.builtIn);
+console.log(listings);
 console.log(listingAscendingly);
 
 /**
@@ -579,3 +580,8 @@ console.log(listingAscendingly);
  * This array should result in two listings only
  */
 //WRITE YOUR CODE BELOW
+
+const townhouseListings = listings.filter((listing) =>
+  listing.propertySummary.buildingType.includes("Townhouse"),
+);
+console.log(townhouseListings);
