@@ -8,11 +8,15 @@ export default function ListingCard({
 }: ResortListing) {
   return (
     <div className="ListingCard">
-      <img src={pic} alt="" width="100px" />
-      <h2>{country}</h2>
-      <p>{location}</p>
-      <p>{rating}★</p>
-      <p>{price}</p>
+      <img src={pic} alt="" width="150px" />
+      <div className="ListingInfo">
+        <p style={{ color: "white", fontWeight: "bolder" }}>{country}</p>
+        <p>{location}</p>
+        <p style={rating > 4.0 ? { color: "green" } : { color: "red" }}>
+          {rating}★
+        </p>
+        <p>{price}/night</p>
+      </div>
     </div>
   );
 }
